@@ -8,139 +8,158 @@
   <link rel="stylesheet" href="style/lesson-2.css">
   <style>
     /* ===== Reset ===== */
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: #f5f7fb;
-  color: #1f2937;
-  line-height: 1.7;
-}
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
 
-/* Hover means mouse over */
-.card:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+    /* Hover means mouse over */
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
 
 
-/* ===== Layout ===== */
-.lesson {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px 60px;
-}
+    /* ===== Layout ===== */
+    .lesson {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
 
-/* ===== Header ===== */
-.lesson-header {
-  margin-bottom: 40px;
-}
+    /* ===== Header ===== */
+    .lesson-header {
+      margin-bottom: 40px;
+    }
 
-.lesson-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-}
+    .lesson-header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
 
-.lesson-intro {
-  font-size: 1.1rem;
-  color: #4b5563;
-}
+    .lesson-intro {
+      font-size: 1.1rem;
+      color: #4b5563;
+    }
 
-/* ===== Cards ===== */
-.card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 28px;
-  margin-bottom: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
+    /* ===== Cards ===== */
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
 
-.card h2 {
-  margin-top: 0;
-  font-size: 1.6rem;
-}
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
 
-.card h3 {
-  margin-top: 28px;
-  font-size: 1.15rem;
-}
+    .card h3 {
+      margin-top: 28px;
+      font-size: 1.15rem;
+    }
 
-/* ===== Text ===== */
-p {
-  margin: 14px 0;
-}
+    /* ===== Text ===== */
+    p {
+      margin: 14px 0;
+    }
 
-ul,
-ol {
-  padding-left: 22px;
-}
+    ul,
+    ol {
+      padding-left: 22px;
+    }
 
-li {
-  margin: 8px 0;
-}
+    li {
+      margin: 8px 0;
+    }
 
-strong {
-  color: #111827;
-}
+    strong {
+      color: #111827;
+    }
 
-/* ===== Code ===== */
-pre {
-  background: #0f172a;
-  color: #e5e7eb;
-  padding: 18px;
-  border-radius: 12px;
-  overflow-x: auto;
-  font-size: 0.95rem;
-  margin: 18px 0;
-}
+    /* ===== Code ===== */
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      margin: 18px 0;
+    }
 
-code {
-  font-family: "JetBrains Mono", Consolas, monospace;
-}
+    code {
+      font-family: "JetBrains Mono", Consolas, monospace;
+    }
 
-p code,
-li code,
-h3 code {
-  background: #eef2ff;
-  color: #3730a3;
-  padding: 2px 6px;
-  border-radius: 6px;
-}
+    p code,
+    li code,
+    h3 code {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
 
-/* ===== Callouts ===== */
-.callout {
-  background: #eef2ff;
-  border-left: 6px solid #6366f1;
-}
+    /* ===== Callouts ===== */
+    .callout {
+      background: #eef2ff;
+      border-left: 6px solid #6366f1;
+    }
 
-.callout h2 {
-  color: #3730a3;
-}
+    .callout h2 {
+      color: #3730a3;
+    }
 
-/* ===== Blockquotes ===== */
-blockquote {
-  margin: 16px 0;
-  padding: 14px 18px;
-  background: #f1f5f9;
-  border-left: 4px solid #94a3b8;
-  border-radius: 8px;
-  font-style: italic;
-  color: #334155;
-}
+    /* ===== Blockquotes ===== */
+    blockquote {
+      margin: 16px 0;
+      padding: 14px 18px;
+      background: #f1f5f9;
+      border-left: 4px solid #94a3b8;
+      border-radius: 8px;
+      font-style: italic;
+      color: #334155;
+    }
 
-/* ===== Dividers ===== */
-hr {
-  border: none;
-  height: 1px;
-  background: #e5e7eb;
-  margin: 40px 0;
-}
+    /* ===== Dividers ===== */
+    hr {
+      border: none;
+      height: 1px;
+      background: #e5e7eb;
+      margin: 40px 0;
+    }
 
- /* Floating "Go to Bottom" Button */
+    /* Fancy Link - Background highlight animation */
+
+    .fancy-link {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 5px 10px;
+      background: linear-gradient(90deg, #ff0055, #ffdd00);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: all 0.5s ease;
+    }
+
+    .fancy-link:hover {
+      background-position: left bottom;
+      color: #000;
+    }
+
+
+    /* Floating "Go to Bottom" Button */
     .scroll-bottom {
       position: fixed;
       bottom: 20px;
@@ -214,7 +233,6 @@ hr {
         /* Larger icon on mobile */
       }
     }
-
   </style>
 </head>
 
@@ -342,21 +360,24 @@ How are you?
 
     </section>
 
-  <!-- Mini Challenge -->
+    <!-- Mini Challenge -->
     <section class="card callout">
       <h2>🎯 Mini Challenge</h2>
-    <p>Create a page with:</p>
-    <ul>
-      <li>One <code>&lt;h1&gt;</code></li>
-      <li>Two <code>&lt;h2&gt;</code> sections</li>
-      <li>At least 3 paragraphs</li>
-      <li>Use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;br&gt;</code> at least once</li>
-    </ul>
-   
-    <p>Next up 👉 Links (&lt;a&gt;) and Images (&lt;img&gt;) 🌍🖼️</p>
+      <p>Create a page with:</p>
+      <ul>
+        <li>One <code>&lt;h1&gt;</code></li>
+        <li>Two <code>&lt;h2&gt;</code> sections</li>
+        <li>At least 3 paragraphs</li>
+        <li>Use <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, and <code>&lt;br&gt;</code> at least once</li>
+      </ul>
+
+      <p>Next up 👉 Links (&lt;a&gt;) and Images (&lt;img&gt;) 🌍🖼️</p>
     </section>
 
-     <!-- Floating "Go to Bottom" Button -->
+    <!-- link to the next lesson -->
+    <a href="lesson-3-links-and-images.html" class="fancy-link">Lesson 3: Links & Images</a>
+
+    <!-- Floating "Go to Bottom" Button -->
     <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
     </button>
 

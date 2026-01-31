@@ -6,145 +6,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 3: Links & Images</title>
     <style>
-         /* ===== Reset ===== */
-    * {
-      box-sizing: border-box;
-    }
+        /* ===== Reset ===== */
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-      line-height: 1.7;
-    }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.7;
+        }
 
-    /* Hover means mouse over */
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
+        /* Hover means mouse over */
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-    /* ===== Layout ===== */
-    .lesson {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px 60px;
-    }
+        /* ===== Layout ===== */
+        .lesson {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
 
-    /* ===== Header ===== */
-    .lesson-header {
-      margin-bottom: 40px;
-    }
+        /* ===== Header ===== */
+        .lesson-header {
+            margin-bottom: 40px;
+        }
 
-    .lesson-header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-    }
+        .lesson-header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
 
-    .lesson-intro {
-      font-size: 1.1rem;
-      color: #4b5563;
-    }
+        .lesson-intro {
+            font-size: 1.1rem;
+            color: #4b5563;
+        }
 
-    /* ===== Cards ===== */
-    .card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    }
+        /* ===== Cards ===== */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.6rem;
-    }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
 
-    .card h3 {
-      margin-top: 28px;
-      font-size: 1.15rem;
-    }
+        .card h3 {
+            margin-top: 28px;
+            font-size: 1.15rem;
+        }
 
-    /* ===== Text ===== */
-    p {
-      margin: 14px 0;
-    }
+        /* ===== Text ===== */
+        p {
+            margin: 14px 0;
+        }
 
-    ul,
-    ol {
-      padding-left: 22px;
-    }
+        ul,
+        ol {
+            padding-left: 22px;
+        }
 
-    li {
-      margin: 8px 0;
-    }
+        li {
+            margin: 8px 0;
+        }
 
-    strong {
-      color: #111827;
-    }
+        strong {
+            color: #111827;
+        }
 
-    /* ===== Code ===== */
-    pre {
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 18px;
-      border-radius: 12px;
-      overflow-x: auto;
-      font-size: 0.95rem;
-      margin: 18px 0;
-    }
+        /* ===== Code ===== */
+        pre {
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 0.95rem;
+            margin: 18px 0;
+        }
 
-    code {
-      font-family: "JetBrains Mono", Consolas, monospace;
-    }
+        code {
+            font-family: "JetBrains Mono", Consolas, monospace;
+        }
 
-    p code,
-    li code,
-    h3 code {
-      background: #eef2ff;
-      color: #3730a3;
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
+        p code,
+        li code,
+        h3 code {
+            background: #eef2ff;
+            color: #3730a3;
+            padding: 2px 6px;
+            border-radius: 6px;
+        }
 
-    /* ===== Callouts ===== */
-    .callout {
-      background: #eef2ff;
-      border-left: 6px solid #6366f1;
-    }
+        /* ===== Callouts ===== */
+        .callout {
+            background: #eef2ff;
+            border-left: 6px solid #6366f1;
+        }
 
-    .callout h2 {
-      color: #3730a3;
-    }
+        .callout h2 {
+            color: #3730a3;
+        }
 
-    /* ===== Blockquotes ===== */
-    blockquote {
-      margin: 16px 0;
-      padding: 14px 18px;
-      background: #f1f5f9;
-      border-left: 4px solid #94a3b8;
-      border-radius: 8px;
-      font-style: italic;
-      color: #334155;
-    }
+        /* ===== Blockquotes ===== */
+        blockquote {
+            margin: 16px 0;
+            padding: 14px 18px;
+            background: #f1f5f9;
+            border-left: 4px solid #94a3b8;
+            border-radius: 8px;
+            font-style: italic;
+            color: #334155;
+        }
 
-    /* ===== Dividers ===== */
-    hr {
-      border: none;
-      height: 1px;
-      background: #e5e7eb;
-      margin: 40px 0;
-    }
+        /* ===== Dividers ===== */
+        hr {
+            border: none;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 40px 0;
+        }
 
-    /* CSS Fancy Link - Gradient underline on hover */
+        /* CSS Fancy Link - Gradient underline on hover */
 
-    a {
-      text-align: center;
-    }
+        a {
+            text-align: center;
+        }
 
-    /* .fancy-link {
+        /* .fancy-link {
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -169,9 +169,9 @@
   transform-origin: left;
 } */
 
-    /* Fancy Link - Neon glowing link */
+        /* Fancy Link - Neon glowing link */
 
-    /* .fancy-link {
+        /* .fancy-link {
   color: #0ff;
   text-decoration: none;
   font-weight: bold;
@@ -190,27 +190,27 @@
     0 0 40px #0ff;
 } */
 
-    /* Fancy Link - Background highlight animation */
+        /* Fancy Link - Background highlight animation */
 
-    .fancy-link {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      padding: 5px 10px;
-      background: linear-gradient(90deg, #ff0055, #ffdd00);
-      background-size: 200% 100%;
-      background-position: right bottom;
-      transition: all 0.5s ease;
-    }
+        .fancy-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            background: linear-gradient(90deg, #ff0055, #ffdd00);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all 0.5s ease;
+        }
 
-    .fancy-link:hover {
-      background-position: left bottom;
-      color: #000;
-    }
+        .fancy-link:hover {
+            background-position: left bottom;
+            color: #000;
+        }
 
 
-    /* Fancy Link - Underline bounce effect */
-    /* .fancy-link {
+        /* Fancy Link - Underline bounce effect */
+        /* .fancy-link {
   text-decoration: none;
   color: #ff0055;
   font-weight: bold;
@@ -234,8 +234,8 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 } */
-    /* First scroll */
-    /* .scroll-bottom {
+        /* First scroll */
+        /* .scroll-bottom {
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -245,80 +245,80 @@
     } */
 
 
-    /* Floating "Go to Bottom" Button */
-    .scroll-bottom {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background-color: #6366f1;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      /* Ensure it's on top */
-    }
+        /* Floating "Go to Bottom" Button */
+        .scroll-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #6366f1;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            /* Ensure it's on top */
+        }
 
-    /* Hover effect */
-    .scroll-bottom:hover {
-      background-color: #4f46e5;
-      /* Slightly darker on hover */
-      transform: scale(1.1);
-      /* Slightly enlarge the button */
-    }
+        /* Hover effect */
+        .scroll-bottom:hover {
+            background-color: #4f46e5;
+            /* Slightly darker on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge the button */
+        }
 
-    /* Focus effect for accessibility */
-    .scroll-bottom:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
-      /* Focus outline */
-    }
+        /* Focus effect for accessibility */
+        .scroll-bottom:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+            /* Focus outline */
+        }
 
-    /* Icon styling */
-    .scroll-bottom::before {
-      content: "⬇";
-      /* Unicode down arrow */
-      font-size: 30px;
-      transition: transform 0.3s ease;
-    }
+        /* Icon styling */
+        .scroll-bottom::before {
+            content: "⬇";
+            /* Unicode down arrow */
+            font-size: 30px;
+            transition: transform 0.3s ease;
+        }
 
 
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      .lesson-header h1 {
-        font-size: 1.8rem;
-      }
+        /* ===== Responsive ===== */
+        @media (max-width: 600px) {
+            .lesson-header h1 {
+                font-size: 1.8rem;
+            }
 
-      .card {
-        padding: 20px;
-      }
+            .card {
+                padding: 20px;
+            }
 
-      .card h2 {
-        font-size: 1.4rem;
-        /* Adjust h2 size on mobile */
-      }
+            .card h2 {
+                font-size: 1.4rem;
+                /* Adjust h2 size on mobile */
+            }
 
-      .card h3 {
-        font-size: 1rem;
-        /* Adjust h3 size on mobile */
-      }
+            .card h3 {
+                font-size: 1rem;
+                /* Adjust h3 size on mobile */
+            }
 
-      .scroll-bottom {
-        width: 70px;
-        height: 70px;
-        font-size: 32px;
-        /* Larger icon on mobile */
-      }
-    }
+            .scroll-bottom {
+                width: 70px;
+                height: 70px;
+                font-size: 32px;
+                /* Larger icon on mobile */
+            }
+        }
     </style>
 </head>
 
@@ -391,11 +391,11 @@
             <hr>
 
             <h3>🧠 Common Beginner Mistakes</h3>
-            
-                ❌ Forgetting file extension:
-                <pre><code>&lt;img src="photo"&gt;</code></pre>
-                ❌ Wrong folder path:
-                <pre><code>&lt;img src="/images/logo.png"&gt;</code></pre>
+
+            ❌ Forgetting file extension:
+            <pre><code>&lt;img src="photo"&gt;</code></pre>
+            ❌ Wrong folder path:
+            <pre><code>&lt;img src="/images/logo.png"&gt;</code></pre>
             <p>(We’ll explain paths deeply later.)</p>
         </section>
 
@@ -435,17 +435,15 @@
                     <li>One external (Google, YouTube, etc.)</li>
                     <li>One fake local link (like contact.html)</li>
                 </ul>
-                <li>Add 1 image</li>
-                <li>Add an image inside a link</li>
+                <li>Add <strong>1 image</strong></li>
+                <li>Add an image <strong>inside a link</strong></li>
             </ol>
         </section>
 
-        <footer>
-            <p>Next up 👉 <strong>Lists (ul, ol) + Comments + HTML structure best practices 📋</strong></p>
-        </footer>
 
-        <!-- link to the next lesson -->
-        <!-- <a href="lesson-2-text-and-headings.html" class="fancy-link">Lesson 2: Text & Headings</a> -->
+
+        <!-- link to the next lesson
+        <a href="lesson-3-links-and-images.html" class="fancy-link">Lesson 3: Next up 👉 <strong>Lists (ul, ol) + Comments + HTML structure best practices 📋</strong></a> -->
 
         <!-- Floating "Go to Bottom" Button -->
         <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
