@@ -140,23 +140,80 @@ hr {
   margin: 40px 0;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .lesson-header h1 {
-    font-size: 1.8rem;
-  }
+ /* Floating "Go to Bottom" Button */
+    .scroll-bottom {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #6366f1;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      /* Ensure it's on top */
+    }
 
-  .card {
-    padding: 20px;
-  }
-  .card h2 {
-    font-size: 1.4rem; /* Adjust h2 size on mobile */
-  }
+    /* Hover effect */
+    .scroll-bottom:hover {
+      background-color: #4f46e5;
+      /* Slightly darker on hover */
+      transform: scale(1.1);
+      /* Slightly enlarge the button */
+    }
 
-  .card h3 {
-    font-size: 1rem; /* Adjust h3 size on mobile */
-  }
-}
+    /* Focus effect for accessibility */
+    .scroll-bottom:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+      /* Focus outline */
+    }
+
+    /* Icon styling */
+    .scroll-bottom::before {
+      content: "⬇";
+      /* Unicode down arrow */
+      font-size: 30px;
+      transition: transform 0.3s ease;
+    }
+
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .lesson-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card h2 {
+        font-size: 1.4rem;
+        /* Adjust h2 size on mobile */
+      }
+
+      .card h3 {
+        font-size: 1rem;
+        /* Adjust h3 size on mobile */
+      }
+
+      .scroll-bottom {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+        /* Larger icon on mobile */
+      }
+    }
 
   </style>
 </head>
@@ -298,6 +355,20 @@ How are you?
    
     <p>Next up 👉 Links (&lt;a&gt;) and Images (&lt;img&gt;) 🌍🖼️</p>
     </section>
+
+     <!-- Floating "Go to Bottom" Button -->
+    <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
+    </button>
+
+    <script>
+      function scrollToBottom() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    </script>
+
   </main>
 </body>
 
