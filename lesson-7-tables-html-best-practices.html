@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 7: Tables & HTML Best Practices</title>
+
+  <style>
+    /* ===== Reset ===== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    /* ===== Layout ===== */
+    .lesson {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ===== Header ===== */
+    .lesson-header {
+      margin-bottom: 40px;
+    }
+
+    .lesson-header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .lesson-intro {
+      font-size: 1.1rem;
+      color: #4b5563;
+    }
+
+    /* ===== Cards ===== */
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+    .card h3 {
+      margin-top: 28px;
+      font-size: 1.15rem;
+    }
+
+    /* ===== Text ===== */
+    p {
+      margin: 14px 0;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: #111827;
+    }
+
+    /* ===== Code ===== */
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      margin: 18px 0;
+    }
+
+    code {
+      font-family: "JetBrains Mono", Consolas, monospace;
+    }
+
+    p code,
+    li code,
+    h3 code {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    /* ===== Callouts ===== */
+    .callout {
+      background: #eef2ff;
+      border-left: 6px solid #6366f1;
+    }
+
+
+     /* Hover means mouse over */
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+
+    /* Floating "Go to Bottom" Button */
+        .scroll-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #6366f1;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            /* Ensure it's on top */
+        }
+
+        /* Hover effect */
+        .scroll-bottom:hover {
+            background-color: #4f46e5;
+            /* Slightly darker on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge the button */
+        }
+
+        /* Focus effect for accessibility */
+        .scroll-bottom:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+            /* Focus outline */
+        }
+
+        /* Icon styling */
+        .scroll-bottom::before {
+            content: "⬇";
+            /* Unicode down arrow */
+            font-size: 30px;
+            transition: transform 0.3s ease;
+        }
+
+  </style>
+</head>
+
+<body>
+
+  <main class="lesson">
+
+    <header class="lesson-header">
+      <h1>Lesson 7: Tables + HTML Best Practices</h1>
+      <p class="lesson-intro">
+        All good—I know what you meant 😄  
+        <br>And what’s next
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>📊 Tables in HTML</h2>
+      <p>Tables are used for structured data <strong>(not layout)</strong>.</p>
+
+      <h3>Basic Table Structure</h3>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Skill&lt;/th&gt;
+    &lt;th&gt;Level&lt;/th&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;HTML&lt;/td&gt;
+    &lt;td&gt;Beginner&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Bob&lt;/td&gt;
+    &lt;td&gt;CSS&lt;/td&gt;
+    &lt;td&gt;Intermediate&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <h3>Breakdown</h3>
+      <ul>
+        <li><code>&lt;table&gt;</code> → table container</li>
+        <li><code>&lt;tr&gt;</code> → table row</li>
+        <li><code>&lt;th&gt;</code> → table heading (bold by default)</li>
+        <li><code>&lt;td&gt;</code> → table data cell</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🧠 Table Sections (Good Practice)</h2>
+
+      <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Course&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML&lt;/td&gt;
+      &lt;td&gt;Completed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS&lt;/td&gt;
+      &lt;td&gt;Next&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+      <p>This helps:</p>
+      <ul>
+        <li>Screen readers</li>
+        <li>Large tables</li>
+        <li>Professional code quality</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🚫 Don’t Use Tables for Layout</h2>
+
+      <p>❌ Wrong:</p>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Header&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <p>✅ Use semantic tags instead:</p>
+      <pre><code>&lt;header&gt;Header&lt;/header&gt;</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>✅ HTML Best Practices (Important)</h2>
+
+      <ol>
+        <li>One <code>&lt;h1&gt;</code> per page</li>
+        <li>Always use <code>alt</code> on images</li>
+        <li>Use semantic tags (<code>header</code>, <code>main</code>, <code>footer</code>)</li>
+        <li>Indent your code</li>
+        <li>Don’t skip heading levels (<code>h1 → h3</code> ❌)</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>🧪 Practice Task</h2>
+      <p>Add this to your page:</p>
+
+      <pre><code>&lt;h2&gt;My Learning Progress&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Topic&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML Basics&lt;/td&gt;
+      &lt;td&gt;Done&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Forms&lt;/td&gt;
+      &lt;td&gt;Learning&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+
+    <section class="card callout">
+      <h2>🧭 What You Know Now 🎉</h2>
+
+      <p>You can already:</p>
+      <ul>
+        <li>Build a full HTML page</li>
+        <li>Use text, links, images</li>
+        <li>Create lists, forms, tables</li>
+        <li>Write semantic, clean HTML</li>
+      </ul>
+
+      <p><strong>That’s real progress 💪</strong></p>
+    </section>
+
+    <section class="card callout">
+      <h2>🚀 What’s Next?</h2>
+
+      <p><strong>Option 1️⃣: CSS (Recommended next)</strong><br>
+        Make your pages beautiful 🎨
+      </p>
+
+      <p><strong>Option 2️⃣: HTML Project</strong><br>
+        Build:
+      </p>
+      <ul>
+        <li>Personal profile page</li>
+        <li>Portfolio skeleton</li>
+        <li>Blog page layout</li>
+      </ul>
+
+      <p><strong>Option 3️⃣: Advanced HTML</strong></p>
+      <ul>
+        <li>Meta tags</li>
+        <li>Accessibility</li>
+        <li>SEO basics</li>
+      </ul>
+
+      <p><strong>You’re doing this the right way. 👏</strong></p>
+    </section>
+
+
+    <!-- Floating "Go to Bottom" Button -->
+        <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
+        </button>
+
+        <script>
+            function scrollToBottom() {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+        </script>
+
+
+  </main>
+
+</body>
+
+</html>
