@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4: Lists, Comments & Clean Structure</title>
+    <style>
+        /* ===== Reset ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        /* ===== Layout ===== */
+        .lesson {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+
+        /* ===== Header ===== */
+        .lesson-header {
+            margin-bottom: 40px;
+        }
+
+        .lesson-header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        .lesson-intro {
+            font-size: 1.1rem;
+            color: #4b5563;
+        }
+
+        /* ===== Cards ===== */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .card h3 {
+            margin-top: 28px;
+            font-size: 1.15rem;
+        }
+
+        /* Hover means mouse over */
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== Text ===== */
+        p {
+            margin: 14px 0;
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        strong {
+            color: #111827;
+        }
+
+        /* ===== Code ===== */
+        pre {
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 0.95rem;
+            margin: 18px 0;
+        }
+
+        code {
+            font-family: "JetBrains Mono", Consolas, monospace;
+        }
+
+        p code,
+        li code,
+        h3 code {
+            background: #eef2ff;
+            color: #3730a3;
+            padding: 2px 6px;
+            border-radius: 6px;
+        }
+
+        /* ===== Callouts ===== */
+        .callout {
+            background: #eef2ff;
+            border-left: 6px solid #6366f1;
+        }
+
+        .callout h2 {
+            color: #3730a3;
+        }
+
+        /* ===== Blockquotes ===== */
+        blockquote {
+            margin: 16px 0;
+            padding: 14px 18px;
+            background: #f1f5f9;
+            border-left: 4px solid #94a3b8;
+            border-radius: 8px;
+            font-style: italic;
+            color: #334155;
+        }
+
+        /* ===== Dividers ===== */
+        hr {
+            border: none;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 40px 0;
+        }
+
+
+
+        /* Floating "Go to Bottom" Button */
+        .scroll-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #6366f1;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            /* Ensure it's on top */
+        }
+
+        /* Hover effect */
+        .scroll-bottom:hover {
+            background-color: #4f46e5;
+            /* Slightly darker on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge the button */
+        }
+
+        /* Focus effect for accessibility */
+        .scroll-bottom:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+            /* Focus outline */
+        }
+
+        /* Icon styling */
+        .scroll-bottom::before {
+            content: "⬇";
+            /* Unicode down arrow */
+            font-size: 30px;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="lesson">
+        <header class="lesson-header">
+            <h1>Lesson 4: Lists, Comments & Clean Structure</h1>
+            <p class="lesson-intro">Love the consistency 😄</p>
+        </header>
+
+        <section class="card">
+            <h2>📋 Lists in HTML</h2>
+            <p>There are two main types of lists.</p>
+
+            <h3>🔹 Unordered List (&lt;ul&gt;) — bullet points</h3>
+            <pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <p><code>&lt;ul&gt;</code> = unordered list</p>
+            <p><code>&lt;li&gt;</code> = list item</p>
+
+            <hr>
+
+            <h3>🔢 Ordered List (&lt;ol&gt;) — numbered</h3>
+            <pre><code>&lt;ol&gt;
+  &lt;li&gt;Learn HTML&lt;/li&gt;
+  &lt;li&gt;Learn CSS&lt;/li&gt;
+  &lt;li&gt;Learn JavaScript&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+            <hr>
+
+            <h3>🧠 Nested List (list inside list)</h3>
+            <pre><code>&lt;ul&gt;
+  &lt;li&gt;Frontend
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backend&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>💬 HTML Comments</h2>
+            <p>Comments are ignored by the browser.</p>
+            <pre><code>&lt;!-- This is a comment --&gt;</code></pre>
+            <p>Use comments to:</p>
+            <ul>
+                <li>Explain code</li>
+                <li>Temporarily disable code</li>
+                <li>Leave notes for yourself</li>
+            </ul>
+            <p>Example:</p>
+            <pre><code>&lt;!-- Main heading --&gt;
+&lt;h1&gt;My Website&lt;/h1&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🧱 Clean HTML Structure (Best Practice)</h2>
+            <p><strong>A proper page layout</strong> looks like this:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+
+    &lt;p&gt;This is my website.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Contact&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🧠 Why indentation matters</h2>
+            <ul>
+                <li>Makes code readable</li>
+                <li>Helps avoid mistakes</li>
+                <li>Industry standard</li>
+                <li>Browsers don’t care—but <strong>developers</strong> do.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🚫 Common Mistakes (Avoid These)</h2>
+            <p>❌ Putting lists inside <code>&lt;p&gt;</code>:</p>
+            <pre><code>&lt;p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Wrong&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;</code></pre>
+            <p>✅ Correct:</p>
+            <pre><code>&lt;p&gt;My skills:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🧪 Practice Time</h2>
+            <p>Update your page with this section:</p>
+            <pre><code>&lt;h2&gt;My Learning Roadmap&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;HTML basics&lt;/li&gt;
+  &lt;li&gt;Text and links&lt;/li&gt;
+  &lt;li&gt;Lists and structure&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Technologies I Want to Learn&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Frontend
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+      &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backend&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </section>
+
+        <section class="card callout">
+            <h2>🎯 Mini Challenge</h2>
+            <p>Create:</p>
+            <ol>
+                <li>One ordered list</li>
+                <li>One unordered list</li>
+                <li>One nested list</li>
+                <li>Add at least <strong>2 comments</strong></li>
+            </ol>
+            </section>
+
+            
+            <p>Next up 👉 HTML Attributes (class, id) + semantic elements 🧩</p>
+
+
+            <!-- Floating "Go to Bottom" Button -->
+            <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
+            </button>
+
+            <script>
+                function scrollToBottom() {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: "smooth"
+                    });
+                }
+            </script>
+    </main>
+</body>
+
+</html>
