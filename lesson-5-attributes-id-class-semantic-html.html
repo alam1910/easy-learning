@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5: Attributes, id, class & Semantic HTML</title>
+
+    <style>
+        /* ===== Reset ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        /* ===== Layout ===== */
+        .lesson {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+
+        /* ===== Header ===== */
+        .lesson-header {
+            margin-bottom: 40px;
+        }
+
+        .lesson-header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        .lesson-intro {
+            font-size: 1.1rem;
+            color: #4b5563;
+        }
+
+        /* ===== Cards ===== */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .card h3 {
+            margin-top: 28px;
+            font-size: 1.15rem;
+        }
+
+        /* ===== Text ===== */
+        p {
+            margin: 14px 0;
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        strong {
+            color: #111827;
+        }
+
+        /* ===== Code ===== */
+        pre {
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 0.95rem;
+            margin: 18px 0;
+        }
+
+        code {
+            font-family: "JetBrains Mono", Consolas, monospace;
+        }
+
+        p code,
+        li code,
+        h3 code,
+        table code {
+            background: #eef2ff;
+            color: #3730a3;
+            padding: 2px 6px;
+            border-radius: 6px;
+        }
+
+        /* ===== Tables ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        th,
+        td {
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #eef2ff;
+        }
+
+        /* ===== Callouts ===== */
+        .callout {
+            background: #eef2ff;
+            border-left: 6px solid #6366f1;
+        }
+
+
+        /* Fancy Link - Background highlight animation */
+
+    .fancy-link {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 5px 10px;
+      background: linear-gradient(90deg, #ff0055, #ffdd00);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: all 0.5s ease;
+    }
+
+    .fancy-link:hover {
+      background-position: left bottom;
+      color: #000;
+    }
+
+
+
+        /* Hover means mouse over */
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Floating "Go to Bottom" Button */
+        .scroll-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #6366f1;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            /* Ensure it's on top */
+        }
+
+        /* Hover effect */
+        .scroll-bottom:hover {
+            background-color: #4f46e5;
+            /* Slightly darker on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge the button */
+        }
+
+        /* Focus effect for accessibility */
+        .scroll-bottom:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+            /* Focus outline */
+        }
+
+        /* Icon styling */
+        .scroll-bottom::before {
+            content: "⬇";
+            /* Unicode down arrow */
+            font-size: 30px;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="lesson">
+
+        <header class="lesson-header">
+            <h1>Lesson 5: Attributes, id, class & Semantic HTML</h1>
+            <p class="lesson-intro">
+                You’re doing great—this is exactly how people actually learn 👍
+                <br><strong>This lesson is SUPER important</strong> for becoming a real web developer.
+            </p>
+        </header>
+
+        <section class="card">
+            <h2>🧩 What is an HTML Attribute?</h2>
+            <p>An attribute gives extra information to a tag.</p>
+
+            <p><strong>Format:</strong></p>
+            <pre><code>&lt;tag attribute="value"&gt;content&lt;/tag&gt;</code></pre>
+
+            <p><strong>Example:</strong></p>
+            <pre><code>&lt;p title="This is a tooltip"&gt;Hover over me&lt;/p&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🆔 id Attribute (Unique)</h2>
+            <ul>
+                <li>Used to identify <strong>one specific element</strong></li>
+                <li>Must be <strong>unique</strong> (only one per page)</li>
+            </ul>
+
+            <pre><code>&lt;h1 id="main-title"&gt;My Website&lt;/h1&gt;</code></pre>
+
+            <p><strong>❌ Wrong:</strong></p>
+            <pre><code>&lt;p id="text"&gt;One&lt;/p&gt;
+&lt;p id="text"&gt;Two&lt;/p&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🏷️ class Attribute (Reusable)</h2>
+            <ul>
+                <li>Used for <strong>multiple elements</strong></li>
+                <li>Very important for CSS later</li>
+            </ul>
+
+            <pre><code>&lt;p class="intro"&gt;Hello&lt;/p&gt;
+&lt;p class="intro"&gt;Welcome&lt;/p&gt;</code></pre>
+
+            <p><strong>👉 You can use many classes:</strong></p>
+            <pre><code>&lt;p class="intro highlight"&gt;Text&lt;/p&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🧠 id vs class (Remember This)</h2>
+
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>id</th>
+                    <th>class</th>
+                </tr>
+                <tr>
+                    <td>Unique</td>
+                    <td>✅</td>
+                    <td>❌</td>
+                </tr>
+                <tr>
+                    <td>Reusable</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Used in CSS</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Used in JavaScript</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>🧱 Semantic HTML (Meaningful Tags)</h2>
+
+            <p><strong>Old way (still works but bad practice):</strong></p>
+            <pre><code>&lt;div&gt;
+  &lt;div&gt;Header&lt;/div&gt;
+  &lt;div&gt;Content&lt;/div&gt;
+  &lt;div&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <p><strong>Modern semantic way:</strong></p>
+            <pre><code>&lt;header&gt;
+  &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;I am learning web development.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Projects&lt;/h2&gt;
+    &lt;p&gt;Coming soon.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2026 My Website&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🧠 Why semantic HTML matters</h2>
+            <ul>
+                <li>Better <strong>SEO</strong></li>
+                <li>Better <strong>accessibility</strong></li>
+                <li>Easier to read & maintain</li>
+                <li>Industry standard</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🧩 Common Semantic Tags</h2>
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><code>&lt;header&gt;</code></td>
+                    <td>Top of page/section</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;nav&gt;</code></td>
+                    <td>Navigation links</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;main&gt;</code></td>
+                    <td>Main content</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;section&gt;</code></td>
+                    <td>Grouped content</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;article&gt;</code></td>
+                    <td>Standalone content</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;footer&gt;</code></td>
+                    <td>Bottom info</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="card callout">
+            <h2>🧪 Practice Task</h2>
+            <pre><code>&lt;header&gt;
+  &lt;h1 id="main-title"&gt;My Personal Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section class="intro"&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;I want to become a full-stack developer.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section class="skills"&gt;
+    &lt;h2&gt;Skills&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS (soon)&lt;/li&gt;
+      &lt;li&gt;JavaScript (soon)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;Thanks for visiting!&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </section>
+
+        <section class="card callout">
+            <h2>🎯 Mini Challenge</h2>
+            <ul>
+                <li>Add <strong>one</strong><code>id</code></li>
+                <li>Add <strong>two classes</strong></li>
+                <li>Use at least <strong>3 semantic tags</strong></li>
+                <li>No extra <code>&lt;div&gt;</code> unless needed</li>
+            </ul>
+
+           
+        </section>
+
+        
+        <!-- link to the next lesson -->
+        <a href="lesson-ml" class="fancy-link">Lesson 6: Next up 👉 Forms & Inputs (how websites collect data) 📝</a>
+
+        <!-- Floating "Go to Bottom" Button -->
+        <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
+        </button>
+
+        <script>
+            function scrollToBottom() {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+        </script>
+
+
+    </main>
+
+</body>
+
+</html>

@@ -139,6 +139,24 @@
 
 
 
+         /* Fancy Link - Background highlight animation */
+
+        .fancy-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            background: linear-gradient(90deg, #ff0055, #ffdd00);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all 0.5s ease;
+        }
+
+        .fancy-link:hover {
+            background-position: left bottom;
+            color: #000;
+        }
+
         /* Floating "Go to Bottom" Button */
         .scroll-bottom {
             position: fixed;
@@ -329,9 +347,9 @@
             </ol>
             </section>
 
-            
-            <p>Next up 👉 HTML Attributes (class, id) + semantic elements 🧩</p>
 
+            <!-- link to the next lesson -->
+        <a href="lesson-5-attributes-id-class-semantic-html.html" class="fancy-link">Next up 👉 Lesson 5: HTML Attributes (class, id) + semantic elements 🧩</a>
 
             <!-- Floating "Go to Bottom" Button -->
             <button class="scroll-bottom" onclick="scrollToBottom()" aria-label="Scroll to Bottom">
