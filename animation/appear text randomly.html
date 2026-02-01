@@ -4,6 +4,41 @@
   <div class="motivation-line" id="motivation-line"></div>
 </section>
 
+<script>
+const motivationalLines = [
+  "আপনি যে প্রতিটি কোড লিখেন, তা আপনার স্বপ্নের দিকে এক ধাপ এগিয়ে নিয়ে যায়।",
+  "ভুলগুলো ব্যর্থতা নয়—এগুলো আপনার সবচেয়ে দ্রুততম শিক্ষক।",
+  "আজ যে ওয়েবটি কল্পনা করছেন, তা আগামীকাল তৈরি করা যায়।",
+  "অনুশীলন চালিয়ে যান; ছোট দৈনিক অগ্রগতি শেষ পর্যন্ত দক্ষতায় পরিণত হয়।",
+  "ডিবাগিং প্রমাণ করে যে আপনি মানের প্রতি যত্নশীল।",
+  "HTML, CSS এবং JS শেখা মানে নিজেকে সুপার পাওয়ার অনলক করা।",
+  "প্রজেক্ট তৈরি করুন, যতই ছোট হোক না কেন—এগুলো আপনার বৃদ্ধি দেখায়।",
+  "আপনার প্রথম ওয়েবসাইটটি হয়তো বিশৃঙ্খল হবে, কিন্তু পরবর্তীটি ঝকঝকে হবে।",
+  "কৌতূহল এবং ধৈর্য আপনাকে কেবল প্রতিভার চেয়ে আরও দূরে নিয়ে যাবে।",
+  "একদিন কেউ আপনার পোর্টফোলিও দেখবে এবং বলবে: 'আমি চাই এটা তাদের দ্বারা তৈরি হোক!'"
+];
+
+const lineContainer = document.getElementById("motivation-line");
+
+function showRandomLine() {
+  // Pick a random index
+  const randomIndex = Math.floor(Math.random() * motivationalLines.length);
+  lineContainer.textContent = motivationalLines[randomIndex];
+
+  // Restart animation
+  lineContainer.classList.remove("show");
+  void lineContainer.offsetWidth; // Trigger reflow
+  lineContainer.classList.add("show");
+
+  // Show next line after 2.5 seconds
+  setTimeout(showRandomLine, 2500);
+}
+
+// Start looping animation
+window.addEventListener('load', showRandomLine);
+</script>
+
+
 <style>
 /* ===== Motivation Section Styling ===== */
 .motivation {
@@ -63,36 +98,3 @@
 }
 </style>
 
-<script>
-const motivationalLines = [
-  "আপনি যে প্রতিটি কোড লিখেন, তা আপনার স্বপ্নের দিকে এক ধাপ এগিয়ে নিয়ে যায়।",
-  "ভুলগুলো ব্যর্থতা নয়—এগুলো আপনার সবচেয়ে দ্রুততম শিক্ষক।",
-  "আজ যে ওয়েবটি কল্পনা করছেন, তা আগামীকাল তৈরি করা যায়।",
-  "অনুশীলন চালিয়ে যান; ছোট দৈনিক অগ্রগতি শেষ পর্যন্ত দক্ষতায় পরিণত হয়।",
-  "ডিবাগিং প্রমাণ করে যে আপনি মানের প্রতি যত্নশীল।",
-  "HTML, CSS এবং JS শেখা মানে নিজেকে সুপার পাওয়ার অনলক করা।",
-  "প্রজেক্ট তৈরি করুন, যতই ছোট হোক না কেন—এগুলো আপনার বৃদ্ধি দেখায়।",
-  "আপনার প্রথম ওয়েবসাইটটি হয়তো বিশৃঙ্খল হবে, কিন্তু পরবর্তীটি ঝকঝকে হবে।",
-  "কৌতূহল এবং ধৈর্য আপনাকে কেবল প্রতিভার চেয়ে আরও দূরে নিয়ে যাবে।",
-  "একদিন কেউ আপনার পোর্টফোলিও দেখবে এবং বলবে: 'আমি চাই এটা তাদের দ্বারা তৈরি হোক!'"
-];
-
-const lineContainer = document.getElementById("motivation-line");
-
-function showRandomLine() {
-  // Pick a random index
-  const randomIndex = Math.floor(Math.random() * motivationalLines.length);
-  lineContainer.textContent = motivationalLines[randomIndex];
-
-  // Restart animation
-  lineContainer.classList.remove("show");
-  void lineContainer.offsetWidth; // Trigger reflow
-  lineContainer.classList.add("show");
-
-  // Show next line after 2.5 seconds
-  setTimeout(showRandomLine, 2500);
-}
-
-// Start looping animation
-window.addEventListener('load', showRandomLine);
-</script>
