@@ -297,6 +297,89 @@
       content: "⬇";
       font-size: 30px;
     }
+
+
+    /* 3D Pressable Button */
+.side-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+/* Right side */
+.right-side {
+  right: -180px; /* hidden outside */
+  transition: right 0.3s ease;
+}
+
+.right-side:hover {
+  right: 10px; /* slides in */
+}
+
+/* Left side */
+.left-side {
+  left: -180px;
+  transition: left 0.3s ease;
+}
+
+.left-side:hover {
+  left: 10px;
+}
+
+/* Horizontal text */
+.side-button a {
+  writing-mode: horizontal-tb;
+  text-orientation: initial;
+}
+.btn-3d {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+
+  background: linear-gradient(180deg, #ff4d6d, #c9184a);
+  border-radius: 10px;
+
+  box-shadow:
+    0 6px 0 #8a0f32,
+    0 0 12px rgba(255, 0, 90, 0.5);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.btn-3d:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 0 0 #8a0f32,
+    0 0 6px rgba(255, 0, 90, 0.4);
+}
+
+.btn-3d:hover {
+  filter: brightness(1.15);
+  box-shadow:
+    0 8px 0 #8a0f32,
+    0 0 18px rgba(255, 0, 90, 0.7);
+}
+@media (max-width: 600px) {
+  .right-side {
+    right: -140px;
+  }
+  .left-side {
+    left: -140px;
+  }
+  .btn-3d {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+
   </style>
 </head>
 
@@ -451,6 +534,15 @@
     </section>
 
     <a href="lesson-2-text-and-headings.html" class="fancy-link">Next up 👉 Lesson 2: Text & Headings</a>
+
+    <!-- 3D Pressable Button -->
+    <div class="side-button right-side">
+      <a href="css-lessons.html" class="btn-3d">খেলা হবে CSS এ 🎨</a>
+    </div>
+
+
+
+
 
     <!-- Go to Top Button -->
     <button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to Top"></button>
